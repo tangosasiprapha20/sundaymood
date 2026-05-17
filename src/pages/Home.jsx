@@ -1,12 +1,13 @@
 import { useMemo, useState } from "react";
-import { Sparkles, Gem } from "lucide-react";
+import { Sparkles, Leaf } from "lucide-react";
 import ShopShell from "../components/ShopShell.jsx";
 
 const CATEGORY_LABELS = {
   all: "ทั้งหมด",
-  necklace: "สร้อย",
-  beads: "ลูกปัด",
-  ring: "แหวน",
+  fresh: "สดใหม่",
+  frozen: "แช่แข็ง",
+  dried: "อบแห้ง",
+  gift: "ของขวัญ",
 };
 
 export default function Home({
@@ -30,53 +31,53 @@ export default function Home({
         <div className="grid gap-6 lg:grid-cols-12 lg:items-start">
           <section className="space-y-6 lg:col-span-4 lg:sticky lg:top-24">
             <div
-              className="relative overflow-hidden rounded-[1.75rem_2.25rem_2rem_1.85rem] border-2 border-dashed border-[#a67c52]/65 bg-[#fffdf8] p-7 shadow-[6px_6px_0_0_rgba(92,61,46,0.12)] md:p-8"
+              className="relative overflow-hidden rounded-[1.75rem_2.25rem_2rem_1.85rem] border-2 border-dashed border-[#f9a8d4] bg-white p-7 shadow-[6px_6px_0_0_rgba(190,24,93,0.12)] md:p-8"
               style={{
                 backgroundImage:
-                  "linear-gradient(165deg, rgba(255,253,248,0.97) 0%, rgba(250,244,234,0.98) 55%, rgba(239,228,212,0.35) 100%)",
+                  "linear-gradient(165deg, rgba(255,255,255,0.98) 0%, rgba(255,240,245,0.98) 55%, rgba(252,231,243,0.5) 100%)",
               }}
             >
               <div
-                className="pointer-events-none absolute -right-2 top-6 h-14 w-24 rotate-[8deg] rounded-sm bg-[#dccfb8]/85 shadow-sm ring-1 ring-[#c9b49a]/60"
+                className="pointer-events-none absolute -right-2 top-6 h-14 w-24 rotate-[8deg] rounded-2xl bg-[#bbf7d0]/70 shadow-sm ring-1 ring-[#86efac]/60"
                 aria-hidden
               />
               <div
-                className="absolute -right-8 -top-8 h-40 w-40 rounded-full bg-[#c9a882]/30 blur-2xl"
+                className="absolute -right-8 -top-8 h-40 w-40 rounded-full bg-[#fda4af]/35 blur-2xl"
                 aria-hidden
               />
-              <p className="inline-flex items-center gap-2 rounded-full border border-[#c9b49a]/80 bg-[#efe4d4]/90 px-3 py-1.5 font-craft text-xs font-semibold tracking-wide text-[#5c3d2e]">
-                <Gem
-                  className="h-3.5 w-3.5 text-[#8b6346]"
-                  strokeWidth={1.75}
+              <p className="inline-flex items-center gap-2 rounded-full border border-[#fbcfe8] bg-[#fdf2f8] px-3 py-1.5 font-craft text-xs font-bold tracking-wide text-[#be185d]">
+                <Leaf
+                  className="h-3.5 w-3.5 text-[#16a34a]"
+                  strokeWidth={2}
                   aria-hidden
                 />
-                handmade with care
+                fresh & fruity
               </p>
-              <h1 className="font-craft mt-5 text-3xl font-bold leading-[1.2] tracking-wide text-[#3c2a22] md:text-[2.35rem]">
-                เครื่องประดับทำมือ
-                <span className="mt-2 block font-craft text-[1.35rem] font-semibold italic text-[#6b4f3c] md:text-2xl">
-                  ลูกปัด · สร้อย · แหวน
+              <h1 className="font-craft mt-5 text-3xl font-bold leading-[1.2] tracking-wide text-[#4a1528] md:text-[2.35rem]">
+                ผลไม้เบอร์รี่
+                <span className="mt-2 block font-craft text-[1.35rem] font-semibold text-[#be185d] md:text-2xl">
+                  สด · หวาน · ส่งถึงบ้าน
                 </span>
               </h1>
-              <p className="mt-2 text-center font-craft text-sm text-[#8b6346]">
-                ✿ · ✿ · ✿
+              <p className="mt-2 text-center font-craft text-sm text-[#db2777]">
+                🍓 · 🫐 · 🍒
               </p>
-              <p className="mt-4 text-sm leading-relaxed text-[#5c4d3f] md:text-base">
-                คัดลูกปัดและเชือกเอง ร้อยและมัดทีละชิ้น — งานไม่ซ้ำเป๊ะทุกเม็ด
+              <p className="mt-4 text-sm leading-relaxed text-[#6b3d52] md:text-base">
+                คัดเบอร์รี่สดจากแหล่งที่เชื่อถือได้ ส่งตรงถึงมือคุณทุกวันอาทิตย์
                 เลือกหมวดแล้วหยิบใส่ตะกร้าได้เลยค่ะ
               </p>
               <div className="mt-6 flex flex-wrap gap-2">
-                <span className="rotate-[-1deg] rounded-2xl border-2 border-[#c9b49a] bg-[#efe4d4] px-3 py-1.5 font-craft text-xs font-semibold text-[#5c3d2e] shadow-sm">
-                  โทนน้ำตาลอบอุ่น
+                <span className="rotate-[-1deg] rounded-2xl border-2 border-[#fda4af] bg-[#fff1f2] px-3 py-1.5 font-craft text-xs font-bold text-[#be185d] shadow-sm">
+                  สดจากฟาร์ม
                 </span>
-                <span className="rotate-[1deg] rounded-2xl border-2 border-[#a67c52]/70 bg-[#dccfb8]/80 px-3 py-1.5 font-craft text-xs font-semibold text-[#3c2a22] shadow-sm">
-                  งานจำกัดต่อแบบ
+                <span className="rotate-[1deg] rounded-2xl border-2 border-[#c4b5fd] bg-[#f5f3ff] px-3 py-1.5 font-craft text-xs font-bold text-[#6d28d9] shadow-sm">
+                  ส่งเย็นทั่วกรุงเทพ
                 </span>
               </div>
             </div>
 
-            <div className="rounded-[1.6rem_2rem_1.8rem_2rem] border-2 border-[#c9b49a] bg-[#faf4ea] p-5 shadow-[4px_4px_0_0_rgba(166,124,82,0.2)]">
-              <p className="font-craft text-sm font-bold tracking-wide text-[#6b4f3c]">
+            <div className="rounded-[1.6rem_2rem_1.8rem_2rem] border-2 border-[#fbcfe8] bg-white p-5 shadow-[4px_4px_0_0_rgba(244,114,182,0.2)]">
+              <p className="font-craft text-sm font-bold tracking-wide text-[#be185d]">
                 เลือกหมวด
               </p>
               <div className="mt-4 flex flex-col gap-2.5">
@@ -87,15 +88,15 @@ export default function Home({
                     onClick={() => setCategory(key)}
                     className={`flex w-full items-center justify-between rounded-2xl border-2 px-4 py-3 text-left text-sm font-semibold transition ${
                       category === key
-                        ? "border-[#5c3d2e] bg-[#5c3d2e] text-[#faf4ea] shadow-[3px_3px_0_0_rgba(60,42,34,0.25)]"
-                        : `border-[#dccfb8] bg-[#fffdf8] text-[#3c2a22] shadow-sm hover:border-[#a67c52] hover:bg-[#fffdf8] ${i % 2 === 1 ? "translate-x-0.5" : ""}`
+                        ? "border-[#be185d] bg-[#be185d] text-white shadow-[3px_3px_0_0_rgba(157,23,77,0.25)]"
+                        : `border-[#fce7f3] bg-[#fff5f9] text-[#4a1528] shadow-sm hover:border-[#f9a8d4] hover:bg-white ${i % 2 === 1 ? "translate-x-0.5" : ""}`
                     }`}
                   >
                     <span className={category === key ? "" : "font-craft"}>
                       {label}
                     </span>
                     {category === key ? (
-                      <span className="font-craft text-xs text-[#dccfb8]">
+                      <span className="font-craft text-xs text-[#fbcfe8]">
                         เลือกอยู่
                       </span>
                     ) : null}
@@ -104,12 +105,12 @@ export default function Home({
               </div>
             </div>
 
-            <div className="rounded-2xl border-2 border-[#5c3d2e] bg-[#4a3228] p-6 text-[#faf4ea] shadow-[5px_5px_0_0_rgba(201,180,154,0.5)]">
-              <p className="font-craft text-sm font-semibold tracking-wide text-[#dccfb8]">
-                แพ็กด้วยมือ
+            <div className="rounded-2xl border-2 border-[#be185d] bg-gradient-to-br from-[#9d174d] to-[#831843] p-6 text-white shadow-[5px_5px_0_0_rgba(253,164,175,0.5)]">
+              <p className="font-craft text-sm font-semibold tracking-wide text-[#fbcfe8]">
+                แพ็กสดใส
               </p>
-              <p className="mt-2 text-sm font-medium leading-relaxed text-[#efe4d4]">
-                ห่อกระดาษคราฟท์ก่อนส่ง — อยากปรับความยาวสร้อยหรือสอบถามไซส์
+              <p className="mt-2 text-sm font-medium leading-relaxed text-[#fce7f3]">
+                ห่อกล่องโฟมเย็นก่อนส่ง — อยากปรับน้ำหนักหรือสอบถามสต็อก
                 ทักมาที่หน้าติดต่อได้เลยนะคะ
               </p>
             </div>
@@ -122,17 +123,17 @@ export default function Home({
                   <div>
                     <h2
                       id="coming-soon-heading"
-                      className="font-craft text-xl font-bold text-[#3c2a22] md:text-2xl"
+                      className="font-craft text-xl font-bold text-[#4a1528] md:text-2xl"
                     >
-                      กำลังทำอยู่ค่ะ
+                      เร็วๆ นี้
                     </h2>
-                    <p className="mt-1 max-w-xl text-sm text-[#5c4d3f]">
-                      คอลเลกชันใหม่ที่กำลังประกอบ — แตะการ์ดอ่านรายละเอียด
+                    <p className="mt-1 max-w-xl text-sm text-[#6b3d52]">
+                      เบอร์รี่ตัวใหม่ที่กำลังจะเข้า — แตะการ์ดอ่านรายละเอียด
                     </p>
                   </div>
-                  <span className="inline-flex items-center gap-1.5 rounded-2xl border-2 border-[#c9b49a] bg-[#efe4d4] px-3 py-1.5 font-craft text-xs font-semibold text-[#5c3d2e]">
+                  <span className="inline-flex items-center gap-1.5 rounded-2xl border-2 border-[#fbcfe8] bg-[#fdf2f8] px-3 py-1.5 font-craft text-xs font-bold text-[#be185d]">
                     <Sparkles
-                      className="h-3.5 w-3.5 text-[#8b6346]"
+                      className="h-3.5 w-3.5 text-[#ec4899]"
                       strokeWidth={1.75}
                     />
                     soon
@@ -143,7 +144,7 @@ export default function Home({
                   {comingSoon.map((item, idx) => (
                     <article
                       key={item.id}
-                      className={`overflow-hidden rounded-[1.65rem_2rem_1.85rem_2rem] border-2 border-[#c9b49a] bg-[#fffdf8] shadow-[5px_6px_0_0_rgba(139,99,70,0.15)] ring-1 ring-[#dccfb8]/60 ${
+                      className={`overflow-hidden rounded-[1.65rem_2rem_1.85rem_2rem] border-2 border-[#fbcfe8] bg-white shadow-[5px_6px_0_0_rgba(190,24,93,0.12)] ring-1 ring-[#fce7f3]/60 ${
                         idx % 2 === 1 ? "sm:translate-y-2" : ""
                       }`}
                     >
@@ -153,19 +154,19 @@ export default function Home({
                           alt=""
                           className="h-full w-full object-cover"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-[#3c2a22]/60 via-transparent to-transparent" />
-                        <span className="font-craft absolute left-3 top-3 rounded-xl border border-[#faf4ea]/90 bg-[#faf4ea]/95 px-3 py-1 text-xs font-bold text-[#3c2a22] shadow-sm">
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#4a1528]/60 via-transparent to-transparent" />
+                        <span className="font-craft absolute left-3 top-3 rounded-xl border border-white/90 bg-white/95 px-3 py-1 text-xs font-bold text-[#4a1528] shadow-sm">
                           {item.eta}
                         </span>
                       </div>
                       <div className="space-y-1 p-4">
-                        <h3 className="font-craft text-lg font-bold text-[#3c2a22]">
+                        <h3 className="font-craft text-lg font-bold text-[#4a1528]">
                           {item.name}
                         </h3>
                         {item.teaser ? (
-                          <p className="text-sm text-[#5c4d3f]">{item.teaser}</p>
+                          <p className="text-sm text-[#6b3d52]">{item.teaser}</p>
                         ) : null}
-                        <p className="pt-2 text-[11px] font-semibold uppercase tracking-wider text-[#a67c52]">
+                        <p className="pt-2 text-[11px] font-semibold uppercase tracking-wider text-[#db2777]">
                           ยังไม่พร้อมสั่งออนไลน์
                         </p>
                       </div>
@@ -178,20 +179,20 @@ export default function Home({
             <section aria-labelledby="shop-heading">
               <div className="mb-5 flex flex-wrap items-end justify-between gap-3">
                 <div className="flex items-center gap-3">
-                  <span className="flex h-11 w-11 items-center justify-center rounded-2xl border-2 border-[#5c3d2e] bg-[#efe4d4] font-craft text-lg text-[#5c3d2e] shadow-[3px_3px_0_0_rgba(92,61,46,0.2)]">
-                    ✿
+                  <span className="flex h-11 w-11 items-center justify-center rounded-2xl border-2 border-[#be185d] bg-[#fdf2f8] text-xl shadow-[3px_3px_0_0_rgba(190,24,93,0.2)]">
+                    🍓
                   </span>
                   <div>
                     <h2
                       id="shop-heading"
-                      className="font-craft text-xl font-bold text-[#3c2a22] md:text-2xl"
+                      className="font-craft text-xl font-bold text-[#4a1528] md:text-2xl"
                     >
                       {category === "all"
-                        ? "ชิ้นพร้อมส่ง"
+                        ? "พร้อมส่งวันนี้"
                         : CATEGORY_LABELS[category]}
                     </h2>
-                    <p className="text-sm text-[#5c4d3f]">
-                      {filtered.length} ชิ้น · ทำมือทีละชิ้น
+                    <p className="text-sm text-[#6b3d52]">
+                      {filtered.length} รายการ · สดใหม่ทุกวัน
                     </p>
                   </div>
                 </div>
@@ -202,7 +203,7 @@ export default function Home({
                   {filtered.map((product, i) => (
                     <article
                       key={product.id}
-                      className={`flex flex-col overflow-hidden rounded-[1.7rem_2.1rem_1.9rem_1.75rem] border-2 border-[#c9b49a] bg-[#fffdf8] shadow-[5px_6px_0_0_rgba(92,61,46,0.1)] transition hover:-translate-y-0.5 hover:border-[#a67c52] hover:shadow-[6px_7px_0_0_rgba(139,99,70,0.18)] ${
+                      className={`flex flex-col overflow-hidden rounded-[1.7rem_2.1rem_1.9rem_1.75rem] border-2 border-[#fbcfe8] bg-white shadow-[5px_6px_0_0_rgba(190,24,93,0.08)] transition hover:-translate-y-0.5 hover:border-[#f9a8d4] hover:shadow-[6px_7px_0_0_rgba(244,114,182,0.2)] ${
                         i % 3 === 1
                           ? "md:rotate-[0.35deg]"
                           : i % 3 === 2
@@ -216,22 +217,22 @@ export default function Home({
                           alt={product.name}
                           className="aspect-[4/5] w-full object-cover"
                         />
-                        <span className="font-craft absolute bottom-3 left-3 rounded-xl border border-[#c9b49a]/80 bg-[#faf4ea]/95 px-2.5 py-1 text-[11px] font-bold text-[#5c3d2e] shadow-sm">
-                          {CATEGORY_LABELS[product.category] ?? "แฮนด์เมด"}
+                        <span className="font-craft absolute bottom-3 left-3 rounded-xl border border-[#fbcfe8]/80 bg-white/95 px-2.5 py-1 text-[11px] font-bold text-[#be185d] shadow-sm">
+                          {CATEGORY_LABELS[product.category] ?? "เบอร์รี่"}
                         </span>
                       </div>
                       <div className="flex flex-1 flex-col space-y-3 p-4">
-                        <h3 className="font-craft text-base font-bold leading-snug text-[#3c2a22]">
+                        <h3 className="font-craft text-base font-bold leading-snug text-[#4a1528]">
                           {product.name}
                         </h3>
                         <div className="mt-auto flex flex-wrap items-center justify-between gap-2">
-                          <span className="text-lg font-bold tabular-nums text-[#5c3d2e]">
+                          <span className="text-lg font-bold tabular-nums text-[#be185d]">
                             ฿{product.price}
                           </span>
                           <button
                             type="button"
                             onClick={() => addToCart(product)}
-                            className="font-craft rounded-2xl border-2 border-[#5c3d2e] bg-[#5c3d2e] px-4 py-2 text-xs font-bold tracking-wide text-[#faf4ea] shadow-[2px_2px_0_0_rgba(201,180,154,0.6)] transition hover:bg-[#fffdf8] hover:text-[#3c2a22]"
+                            className="font-craft rounded-2xl border-2 border-[#be185d] bg-[#be185d] px-4 py-2 text-xs font-bold tracking-wide text-white shadow-[2px_2px_0_0_rgba(253,164,175,0.6)] transition hover:bg-white hover:text-[#be185d]"
                           >
                             หยิบใส่ตะกร้า
                           </button>
@@ -241,7 +242,7 @@ export default function Home({
                   ))}
                 </div>
               ) : (
-                <p className="rounded-2xl border-2 border-dashed border-[#c9b49a] bg-[#faf4ea]/90 py-12 text-center text-sm text-[#6b4f3c]">
+                <p className="rounded-2xl border-2 border-dashed border-[#fbcfe8] bg-white/90 py-12 text-center text-sm text-[#be185d]">
                   ไม่มีสินค้าในหมวดนี้ค่ะ
                 </p>
               )}

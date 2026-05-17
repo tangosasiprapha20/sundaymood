@@ -2,32 +2,34 @@
 
 @theme {
   --font-family-sans: "Sarabun", ui-sans-serif, system-ui, sans-serif;
-  --font-family-craft: "Mali", cursive, ui-serif, Georgia, serif;
+  --font-family-craft: "Quicksand", "Mali", cursive, ui-sans-serif, sans-serif;
 }
 
 :root {
-  --text: #5c4d3f;
-  --text-h: #3c2a22;
-  --bg: #e9dfd0;
-  --surface: #faf4ea;
-  --border: #c9b49a;
-  --code-bg: #efe4d4;
-  --accent: #5c3d2e;
-  --accent-hover: #3d2619;
-  --accent-bg: rgba(92, 61, 46, 0.1);
-  --accent-border: rgba(92, 61, 46, 0.28);
-  --social-bg: rgba(239, 228, 212, 0.85);
+  --text: #6b3d52;
+  --text-h: #4a1528;
+  --bg: #fff0f5;
+  --surface: #fff5f9;
+  --border: #f5c2d4;
+  --code-bg: #fce7f3;
+  --accent: #be185d;
+  --accent-hover: #9d174d;
+  --accent-bg: rgba(190, 24, 93, 0.08);
+  --accent-border: rgba(190, 24, 93, 0.25);
+  --berry-dark: #831843;
+  --berry-leaf: #16a34a;
+  --social-bg: rgba(252, 231, 243, 0.9);
   --shadow:
-    rgba(60, 42, 34, 0.08) 0 10px 36px -10px,
-    rgba(60, 42, 34, 0.06) 0 4px 14px -4px;
+    rgba(74, 21, 40, 0.08) 0 10px 36px -10px,
+    rgba(190, 24, 93, 0.06) 0 4px 14px -4px;
 
   --sans: "Sarabun", ui-sans-serif, system-ui, sans-serif;
-  --heading: "Mali", cursive, ui-serif, Georgia, serif;
+  --heading: "Quicksand", "Mali", cursive, ui-sans-serif, sans-serif;
   --mono: ui-monospace, Consolas, monospace;
 
   font: 17px/160% var(--sans);
   letter-spacing: 0.01em;
-  color-scheme: light dark;
+  color-scheme: light;
   color: var(--text);
   background: var(--bg);
   font-synthesis: none;
@@ -37,29 +39,6 @@
 
   @media (max-width: 1024px) {
     font-size: 16px;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #a8a29e;
-    --text-h: #fafaf9;
-    --bg: #1c1917;
-    --surface: #292524;
-    --border: #44403c;
-    --code-bg: #292524;
-    --accent: #fcd34d;
-    --accent-hover: #fde68a;
-    --accent-bg: rgba(252, 211, 77, 0.1);
-    --accent-border: rgba(252, 211, 77, 0.25);
-    --social-bg: rgba(68, 64, 60, 0.45);
-    --shadow:
-      rgba(0, 0, 0, 0.45) 0 12px 40px -12px,
-      rgba(0, 0, 0, 0.3) 0 4px 16px -4px;
-  }
-
-  #social .button-icon {
-    filter: invert(1) brightness(2);
   }
 }
 
@@ -88,7 +67,7 @@ h2 {
 
 h1 {
   font-size: 2.5rem;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.02em;
   margin: 1.75rem 0;
   line-height: 1.15;
   @media (max-width: 1024px) {
@@ -100,7 +79,7 @@ h1 {
 h2 {
   font-size: 1.35rem;
   line-height: 1.25;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
   margin: 0 0 0.5rem;
   @media (max-width: 1024px) {
     font-size: 1.125rem;

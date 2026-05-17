@@ -9,19 +9,30 @@ import Contact from "./pages/Contact.jsx";
 import About from "./pages/About.jsx";
 import OrderHistory from "./pages/OrderHistory.jsx";
 
-import imgสร้อยคอลูกปัดแก้วโทนน้ำตาล from "./assets/สร้อยคอลูกปัดแก้วโทนน้ำตาล.jpg";
-import imgสร้อยโบฮีเมียน from "./assets/สร้อยโบฮีเมียน.jpg";
-import imgสร้อยข้อมือลูกปัดหินอ่อนครีม from "./assets/สร้อยข้อมือลูกปัดหินอ่อนครีม.jpg";
-import imgชุดลูกปัดแก้วคละโทน from "./assets/ชุดลูกปัดแก้วคละโทน.jpg";
-import imgลูกปัดเซรามิกลายดินเผา from "./assets/ลูกปัดเซรามิกลายดินเผา.jpg";
-import imgลูกปัดไม้เม็ดทองเหลือง from "./assets/ลูกปัดไม้เม็ดทองเหลือง.jpg";
-import imgแหวนเรซินโทนอบอุ่น from "./assets/แหวานลูกปัดเรซินโทนอบอุ่น.jpg";
-import imgแหวนลูกปัดหลากสี from "./assets/แหวนลุกปัดหลากสี.jpg";
-import imgต่างหูลูกปัด from "./assets/ต่างหูลูกปัดน่ารัก.jpg";
-import imgกล่องของขวัญเซตสร้อย from "./assets/กล่องของขวัญเซตสร้อย.jpg";
-import imgสร้อยลูกปัดฝังทองเหลือง from "./assets/สร้อยลูกปัดฝังทองเหลือง.jpg";
-import imgเวิร์กชอปสร้อยข้อมือ from "./assets/เวิร์กชอปสร้อยข้อมือประกอบ.jpg";
-import imgลูกปัดเซรามิก from "./assets/ลูกปัดเซรามิก.jpg";
+const imgสตรอว์เบอร์รี่ =
+  "https://images.unsplash.com/photo-1464965911861-746a04b4bca6?w=600&q=80";
+const imgบลูเบอร์รี่ =
+  "https://images.unsplash.com/photo-1498557850523-fd3d118b962e?w=600&q=80";
+const imgราสเบอร์รี่ =
+  "https://images.unsplash.com/photo-1577069861033-55d04cec883b?w=600&q=80";
+const imgแบล็กเบอร์รี่ =
+  "https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?w=600&q=80";
+const imgแครนเบอร์รี่ =
+  "https://images.unsplash.com/photo-1550831518-38c1abe42726?w=600&q=80";
+const imgมิกซ์เบอร์รี่ =
+  "https://images.unsplash.com/photo-1493916679350-3b2bba79e24b?w=600&q=80";
+const imgโกจิเบอร์รี่ =
+  "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=600&q=80";
+const imgน้ำเบอร์รี่ =
+  "https://images.unsplash.com/photo-1610970881699-44a55842ed08?w=600&q=80";
+const imgแช่แข็ง =
+  "https://images.unsplash.com/photo-1571771894821-d9b910e82ed8?w=600&q=80";
+const imgกล่องของขวัญ =
+  "https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?w=600&q=80";
+const imgสตรอว์เบอร์รี่ช็อกโกแลต =
+  "https://images.unsplash.com/photo-1488477181946-6428a0291777?w=600&q=80";
+const imgเชอร์รี่ =
+  "https://images.unsplash.com/photo-1528821122594-5a6305070b6c?w=600&q=80";
 
 /** ส่งออเดอร์ไป Discord */
 async function sendOrderToDiscord({
@@ -59,8 +70,8 @@ async function sendOrderToDiscord({
   const payload = {
     embeds: [
       {
-        title: `📦 ออเดอร์ #${orderId}`,
-        color: 0x78350f,
+        title: `🍓 ออเดอร์ #${orderId}`,
+        color: 0xbe185d,
 
         fields: [
           {
@@ -78,7 +89,7 @@ async function sendOrderToDiscord({
             value: address || "-",
           },
           {
-            name: "✦ รายการสินค้า",
+            name: "🫐 รายการสินค้า",
             value: items || "-",
           },
           {
@@ -89,7 +100,7 @@ async function sendOrderToDiscord({
         ],
 
         footer: {
-          text: "Lunelle Order",
+          text: "Sunday Berry Order",
         },
 
         timestamp: new Date().toISOString(),
@@ -155,7 +166,7 @@ async function sendOrderCancellationToDiscord(order) {
           { name: "👤 ลูกค้า", value: order.name || "-", inline: true },
           { name: "📞 เบอร์", value: order.phone || "-", inline: true },
           { name: "📍 ที่อยู่", value: order.address || "-" },
-          { name: "✦ รายการสินค้า", value: itemsText || "-" },
+          { name: "🫐 รายการสินค้า", value: itemsText || "-" },
           { name: "💰 ยอดเดิม", value: `฿${order.total || 0}`, inline: true },
           {
             name: "🕒 เวลาที่ยกเลิก",
@@ -165,7 +176,7 @@ async function sendOrderCancellationToDiscord(order) {
             inline: true,
           },
         ],
-        footer: { text: "Lunelle Order" },
+        footer: { text: "Sunday Berry Order" },
         timestamp: new Date().toISOString(),
       },
     ],
@@ -186,9 +197,9 @@ async function sendOrderCancellationToDiscord(order) {
 function readOrderHistory() {
   try {
     const raw =
+      localStorage.getItem("sundayberry.orderHistory") ??
       localStorage.getItem("lunelle.orderHistory") ??
-      localStorage.getItem("softlane.orderHistory") ??
-      localStorage.getItem("mellow.orderHistory");
+      localStorage.getItem("softlane.orderHistory");
     const parsed = raw ? JSON.parse(raw) : [];
     return Array.isArray(parsed) ? parsed : [];
   } catch {
@@ -199,9 +210,9 @@ function readOrderHistory() {
 function readOrderId() {
   try {
     const raw =
+      localStorage.getItem("sundayberry.orderId") ??
       localStorage.getItem("lunelle.orderId") ??
-      localStorage.getItem("softlane.orderId") ??
-      localStorage.getItem("mellow.orderId");
+      localStorage.getItem("softlane.orderId");
     const n = raw ? Number(raw) : 1001;
     return Number.isFinite(n) ? n : 1001;
   } catch {
@@ -218,7 +229,10 @@ export default function App() {
 
   useEffect(() => {
     try {
-      localStorage.setItem("lunelle.orderHistory", JSON.stringify(orderHistory));
+      localStorage.setItem(
+        "sundayberry.orderHistory",
+        JSON.stringify(orderHistory)
+      );
     } catch {
       // ignore write failures
     }
@@ -226,7 +240,7 @@ export default function App() {
 
   useEffect(() => {
     try {
-      localStorage.setItem("lunelle.orderId", String(orderId));
+      localStorage.setItem("sundayberry.orderId", String(orderId));
     } catch {
       // ignore write failures
     }
@@ -235,97 +249,97 @@ export default function App() {
   const products = [
     {
       id: 1,
-      name: "สร้อยคอลูกปัดแก้วโทนน้ำตาล",
-      price: 320,
-      category: "necklace",
-      image: imgสร้อยคอลูกปัดแก้วโทนน้ำตาล,
+      name: "สตรอว์เบอร์รี่สดพรีเมียม (500g)",
+      price: 189,
+      category: "fresh",
+      image: imgสตรอว์เบอร์รี่,
     },
     {
       id: 2,
-      name: "สร้อยยาวโบฮีเมียนมือถัก",
-      price: 380,
-      category: "necklace",
-      image: imgสร้อยโบฮีเมียน,
+      name: "บลูเบอร์รี่นำเข้า (250g)",
+      price: 249,
+      category: "fresh",
+      image: imgบลูเบอร์รี่,
     },
     {
       id: 3,
-      name: "สร้อยข้อมือลูกปัดหินอ่อนครีม",
-      price: 260,
-      category: "necklace",
-      image: imgสร้อยข้อมือลูกปัดหินอ่อนครีม,
+      name: "ราสเบอร์รี่สด (200g)",
+      price: 279,
+      category: "fresh",
+      image: imgราสเบอร์รี่,
     },
     {
       id: 4,
-      name: "ชุดลูกปัดแก้วคละโทน (DIY)",
-      price: 195,
-      category: "beads",
-      image: imgชุดลูกปัดแก้วคละโทน,
+      name: "แบล็กเบอร์รี่สด (200g)",
+      price: 199,
+      category: "fresh",
+      image: imgแบล็กเบอร์รี่,
     },
     {
       id: 5,
-      name: "ลูกปัดเซรามิกลายดินเผา",
-      price: 145,
-      category: "beads",
-      image: imgลูกปัดเซรามิกลายดินเผา,
+      name: "แครนเบอร์รี่อบแห้ง (150g)",
+      price: 129,
+      category: "dried",
+      image: imgแครนเบอร์รี่,
     },
     {
       id: 6,
-      name: "ลูกปัดไม้และเม็ดทองเหลือง",
-      price: 175,
-      category: "beads",
-      image: imgลูกปัดไม้เม็ดทองเหลือง,
+      name: "โกจิเบอร์รี่อบแห้ง (200g)",
+      price: 159,
+      category: "dried",
+      image: imgโกจิเบอร์รี่,
     },
     {
       id: 7,
-      name: "แหวนลูกปัดเรซินโทนอบอุ่น",
-      price: 220,
-      category: "ring",
-      image: imgแหวนเรซินโทนอบอุ่น,
+      name: "มิกซ์เบอร์รี่แช่แข็ง (1kg)",
+      price: 299,
+      category: "frozen",
+      image: imgแช่แข็ง,
     },
     {
       id: 8,
-      name: "แหวนปรับไซส์ลูกปัดหลากสี",
-      price: 189,
-      category: "ring",
-      image: imgแหวนลูกปัดหลากสี,
+      name: "สตรอว์เบอร์รี่ชุบช็อกโกแลต (12 ชิ้น)",
+      price: 179,
+      category: "gift",
+      image: imgสตรอว์เบอร์รี่ช็อกโกแลต,
     },
     {
       id: 9,
-      name: "ต่างหูลูกปัดคู่ทำมือ",
-      price: 240,
-      category: "beads",
-      image: imgต่างหูลูกปัด,
+      name: "น้ำเบอร์รี่คั้นสด (500ml)",
+      price: 89,
+      category: "fresh",
+      image: imgน้ำเบอร์รี่,
     },
     {
       id: 10,
-      name: "กล่องของขวัญเซ็ตสร้อย + แหวน",
-      price: 520,
-      category: "necklace",
-      image: imgกล่องของขวัญเซตสร้อย,
+      name: "กล่องของขวัญเบอร์รี่มิกซ์",
+      price: 590,
+      category: "gift",
+      image: imgกล่องของขวัญ,
     },
   ];
 
   const comingSoon = [
     {
       id: "soon-1",
-      name: "คอลเลกชันลูกปัดฝังทองเหลือง",
-      teaser: "สร้อยและต่างหูชุดเข้าคู่",
-      eta: "ปลายเดือนนี้",
-      image: imgสร้อยลูกปัดฝังทองเหลือง,
+      name: "เชอร์รี่นำเข้าฤดูใหม่",
+      teaser: "หวานกรอบ จำกัดจำนวนต่อวัน",
+      eta: "สัปดาห์หน้า",
+      image: imgเชอร์รี่,
     },
     {
       id: "soon-2",
-      name: "เวิร์กช็อปประกอบสร้อยมือ",
-      teaser: "จองที่นั่งออนไลน์",
-      eta: "เร็วๆ นี้",
-      image: imgเวิร์กชอปสร้อยข้อมือ,
+      name: "สมูทตี้มิกซ์เบอร์รี่",
+      teaser: "พร้อมดื่มเย็นๆ ส่งถึงบ้าน",
+      eta: "ปลายเดือนนี้",
+      image: imgมิกซ์เบอร์รี่,
     },
     {
       id: "soon-3",
-      name: "ลิมิเต็ดลูกปัดเซรามิกญี่ปุ่น",
-      teaser: "จำนวนจำกัดต่อแบบ",
-      eta: "สัปดาห์หน้า",
-      image: imgลูกปัดเซรามิก,
+      name: "แยมเบอร์รี่โฮมเมด",
+      teaser: "ทำสดทุกอาทิตย์ ไม่ใส่วัตถุกันเสีย",
+      eta: "เร็วๆ นี้",
+      image: imgราสเบอร์รี่,
     },
   ];
 

@@ -17,30 +17,30 @@ export default function Cart({
       <div className="mx-auto max-w-xl space-y-8">
         <Link
           to="/home"
-          className="inline-flex items-center gap-2 rounded-2xl border-2 border-[#c9b49a] bg-[#fffdf8] px-4 py-2 text-sm font-bold text-[#5c4d3f] shadow-sm transition hover:border-[#a67c52] hover:text-[#3c2a22]"
+          className="inline-flex items-center gap-2 rounded-2xl border-2 border-[#fbcfe8] bg-white px-4 py-2 text-sm font-bold text-[#6b3d52] shadow-sm transition hover:border-[#f9a8d4] hover:text-[#4a1528]"
         >
           <ArrowLeft className="h-4 w-4" strokeWidth={1.75} />
           เลือกสินค้าต่อ
         </Link>
 
         <div>
-          <h1 className="font-craft text-3xl font-bold tracking-wide text-[#3c2a22]">
+          <h1 className="font-craft text-3xl font-bold tracking-wide text-[#4a1528]">
             ตะกร้าของคุณ
           </h1>
-          <p className="mt-2 text-sm text-[#5c4d3f]">
+          <p className="mt-2 text-sm text-[#6b3d52]">
             ตรวจรายการก่อนไปชำระเงิน
           </p>
         </div>
 
         {cart.length === 0 ? (
-          <div className="rounded-[2rem] border-2 border-dashed border-[#c9b49a] bg-[#faf4ea]/90 px-6 py-16 text-center shadow-inner">
-            <p className="font-craft text-4xl text-[#8b6346]">✿</p>
-            <p className="mt-4 text-[#5c4d3f]">ยังไม่มีสินค้าในตะกร้า</p>
+          <div className="rounded-[2rem] border-2 border-dashed border-[#fbcfe8] bg-white/90 px-6 py-16 text-center shadow-inner">
+            <p className="text-4xl">🍓</p>
+            <p className="mt-4 text-[#6b3d52]">ยังไม่มีเบอร์รี่ในตะกร้า</p>
             <Link
               to="/home"
-              className="font-craft mt-6 inline-flex rounded-2xl border-2 border-[#5c3d2e] bg-[#5c3d2e] px-6 py-2.5 text-sm font-bold text-[#faf4ea] shadow-[3px_3px_0_0_rgba(201,180,154,0.5)] transition hover:bg-[#fffdf8] hover:text-[#3c2a22]"
+              className="font-craft mt-6 inline-flex rounded-2xl border-2 border-[#be185d] bg-[#be185d] px-6 py-2.5 text-sm font-bold text-white shadow-[3px_3px_0_0_rgba(253,164,175,0.5)] transition hover:bg-white hover:text-[#be185d]"
             >
-              ไปเลือกชิ้นที่ชอบ
+              ไปเลือกเบอร์รี่
             </Link>
           </div>
         ) : (
@@ -49,25 +49,25 @@ export default function Cart({
               {cart.map((item, index) => (
                 <li
                   key={`${item.id}-${index}`}
-                  className="flex gap-4 rounded-2xl border-2 border-[#c9b49a] bg-[#fffdf8] p-4 shadow-[4px_4px_0_0_rgba(92,61,46,0.08)]"
+                  className="flex gap-4 rounded-2xl border-2 border-[#fbcfe8] bg-white p-4 shadow-[4px_4px_0_0_rgba(190,24,93,0.08)]"
                 >
                   <img
                     src={item.image}
                     alt=""
-                    className="h-28 w-28 shrink-0 rounded-2xl object-cover ring-2 ring-[#dccfb8]"
+                    className="h-28 w-28 shrink-0 rounded-2xl object-cover ring-2 ring-[#fce7f3]"
                   />
                   <div className="min-w-0 flex-1">
-                    <h2 className="font-craft font-bold text-[#3c2a22]">{item.name}</h2>
-                    <p className="mt-1 text-sm text-[#6b4f3c]">
+                    <h2 className="font-craft font-bold text-[#4a1528]">{item.name}</h2>
+                    <p className="mt-1 text-sm text-[#be185d]">
                       ฿{item.price}{" "}
-                      <span className="text-[#a67c52]">
+                      <span className="text-[#db2777]">
                         × {item.quantity ?? 1}
                       </span>
                     </p>
                     <button
                       type="button"
                       onClick={() => removeFromCart?.(item.id)}
-                      className="mt-3 inline-flex rounded-2xl border-2 border-[#dccfb8] bg-[#efe4d4] px-4 py-1.5 text-xs font-bold text-[#5c3d2e] transition hover:bg-[#fffdf8]"
+                      className="mt-3 inline-flex rounded-2xl border-2 border-[#fce7f3] bg-[#fdf2f8] px-4 py-1.5 text-xs font-bold text-[#be185d] transition hover:bg-white"
                     >
                       เอาออก
                     </button>
@@ -76,9 +76,9 @@ export default function Cart({
               ))}
             </ul>
 
-            <div className="rounded-[2rem] border-2 border-[#5c3d2e] bg-[#4a3228] p-6 text-[#faf4ea] shadow-[6px_6px_0_0_rgba(201,180,154,0.45)]">
-              <div className="flex items-baseline justify-between border-b border-[#faf4ea]/15 pb-4">
-                <span className="text-sm font-semibold text-[#dccfb8]">
+            <div className="rounded-[2rem] border-2 border-[#be185d] bg-gradient-to-br from-[#9d174d] to-[#831843] p-6 text-white shadow-[6px_6px_0_0_rgba(253,164,175,0.45)]">
+              <div className="flex items-baseline justify-between border-b border-white/15 pb-4">
+                <span className="text-sm font-semibold text-[#fbcfe8]">
                   ยอดรวม
                 </span>
                 <span className="text-3xl font-bold tabular-nums">
@@ -86,7 +86,7 @@ export default function Cart({
                 </span>
               </div>
               <Link to="/checkout" className="mt-5 block">
-                <span className="font-craft flex w-full items-center justify-center rounded-2xl border-2 border-[#faf4ea] bg-[#faf4ea] py-3.5 text-sm font-bold text-[#3c2a22] transition hover:bg-[#efe4d4]">
+                <span className="font-craft flex w-full items-center justify-center rounded-2xl border-2 border-white bg-white py-3.5 text-sm font-bold text-[#be185d] transition hover:bg-[#fdf2f8]">
                   ไปชำระเงิน
                 </span>
               </Link>

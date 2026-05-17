@@ -6,7 +6,7 @@ const contacts = [
   {
     label: "Instagram",
     icon: "📸",
-    value: "@lunelle.handmade",
+    value: "@sundayberry.fresh",
     href: "https://www.instagram.com/3rdtango?igsh=d3I2eDRjNGNoeG93&utm_source=qr",
   },
   {
@@ -30,17 +30,17 @@ export default function Contact({
   return (
     <ShopShell cart={cart} setIsLoggedIn={setIsLoggedIn}>
       <div className="mx-auto max-w-3xl space-y-8">
-        <div className="relative overflow-hidden rounded-[2rem] border-2 border-dashed border-[#a67c52]/55 bg-[#fffdf8] p-8 shadow-md md:p-10">
-          <div className="absolute -right-6 -top-6 h-24 w-24 rounded-full bg-[#dccfb8]/90 blur-2xl" aria-hidden />
-          <span className="inline-flex items-center gap-2 rounded-full border border-[#c9b49a]/80 bg-[#efe4d4] px-3 py-1.5 font-craft text-xs font-semibold tracking-wide text-[#5c3d2e]">
-            <Mail className="h-4 w-4 text-[#6b4f3c]" strokeWidth={1.75} aria-hidden />
+        <div className="relative overflow-hidden rounded-[2rem] border-2 border-dashed border-[#f9a8d4] bg-white p-8 shadow-md md:p-10">
+          <div className="absolute -right-6 -top-6 h-24 w-24 rounded-full bg-[#fda4af]/50 blur-2xl" aria-hidden />
+          <span className="inline-flex items-center gap-2 rounded-full border border-[#fbcfe8] bg-[#fdf2f8] px-3 py-1.5 font-craft text-xs font-semibold tracking-wide text-[#be185d]">
+            <Mail className="h-4 w-4 text-[#db2777]" strokeWidth={1.75} aria-hidden />
             Contact
           </span>
-          <h1 className="font-craft mt-4 text-3xl font-bold tracking-wide text-[#3c2a22] md:text-4xl">
+          <h1 className="font-craft mt-4 text-3xl font-bold tracking-wide text-[#4a1528] md:text-4xl">
             ช่องทางการติดต่อ
           </h1>
-          <p className="mt-4 max-w-xl text-sm leading-relaxed text-[#5c4d3f] md:text-base">
-            สอบถามสต็อก การปรับไซส์สร้อย หรือการจัดส่งได้ทุกช่องทางด้านล่าง
+          <p className="mt-4 max-w-xl text-sm leading-relaxed text-[#6b3d52] md:text-base">
+            สอบถามสต็อก การจัดส่งเย็น หรือสั่งเบอร์รี่พิเศษได้ทุกช่องทางด้านล่าง
             ทางร้านตอบกลับตามลำดับคิวข้อความ
           </p>
         </div>
@@ -52,44 +52,44 @@ export default function Contact({
               href={item.href}
               target={item.href.startsWith("http") ? "_blank" : undefined}
               rel={item.href.startsWith("http") ? "noreferrer" : undefined}
-              className={`group flex flex-col rounded-[1.75rem] border-2 border-[#c9b49a] bg-[#fffdf8] p-6 shadow-md transition hover:-translate-y-1 hover:border-[#a67c52] hover:shadow-xl ${
+              className={`group flex flex-col rounded-[1.75rem] border-2 border-[#fbcfe8] bg-white p-6 shadow-md transition hover:-translate-y-1 hover:border-[#f9a8d4] hover:shadow-xl ${
                 idx === 0 ? "sm:col-span-2" : ""
               }`}
             >
               <div className="flex items-center gap-2">
                 <span className="text-2xl">{item.icon}</span>
-                <p className="text-sm font-bold text-[#6b4f3c]">{item.label}</p>
+                <p className="text-sm font-bold text-[#be185d]">{item.label}</p>
               </div>
-              <div className="mt-4 grow rounded-2xl border-2 border-dashed border-[#c9b49a] bg-[#efe4d4] px-4 py-3">
-                <p className="text-lg font-bold text-[#3c2a22] group-hover:text-[#5c3d2e]">
+              <div className="mt-4 grow rounded-2xl border-2 border-dashed border-[#fbcfe8] bg-[#fdf2f8] px-4 py-3">
+                <p className="text-lg font-bold text-[#4a1528] group-hover:text-[#be185d]">
                   {item.value}
                 </p>
               </div>
-              <p className="mt-3 text-xs font-semibold uppercase tracking-wider text-[#a67c52]">
+              <p className="mt-3 text-xs font-semibold uppercase tracking-wider text-[#db2777]">
                 แตะเพื่อเปิดช่องทาง
               </p>
             </a>
           ))}
         </div>
 
-        <div className="rounded-[1.75rem] border-2 border-[#c9b49a] bg-[#fffdf8] p-6 shadow-sm">
-          <p className="text-sm font-bold text-[#5c4d3f]">ไปต่อที่ไหนดี?</p>
+        <div className="rounded-[1.75rem] border-2 border-[#fbcfe8] bg-white p-6 shadow-sm">
+          <p className="text-sm font-bold text-[#6b3d52]">ไปต่อที่ไหนดี?</p>
           <div className="mt-4 flex flex-wrap gap-3">
             <Link
               to="/home"
-              className="inline-flex min-w-[8.5rem] items-center justify-center rounded-2xl border-2 border-[#5c3d2e] bg-[#5c3d2e] px-5 py-2.5 text-sm font-bold text-[#faf4ea] shadow-[3px_3px_0_0_rgba(201,180,154,0.45)] transition hover:bg-[#fffdf8] hover:text-[#3c2a22]"
+              className="inline-flex min-w-[8.5rem] items-center justify-center rounded-2xl border-2 border-[#be185d] bg-[#be185d] px-5 py-2.5 text-sm font-bold text-white shadow-[3px_3px_0_0_rgba(253,164,175,0.45)] transition hover:bg-white hover:text-[#be185d]"
             >
               กลับหน้าแรก
             </Link>
             <Link
               to="/cart"
-              className="inline-flex min-w-[8.5rem] items-center justify-center rounded-full border-2 border-[#c9b49a] bg-[#efe4d4] px-5 py-2.5 text-sm font-bold text-[#3c2a22] transition hover:bg-white"
+              className="inline-flex min-w-[8.5rem] items-center justify-center rounded-full border-2 border-[#fbcfe8] bg-[#fdf2f8] px-5 py-2.5 text-sm font-bold text-[#4a1528] transition hover:bg-white"
             >
               ไปตะกร้า
             </Link>
             <Link
               to="/about"
-              className="inline-flex min-w-[8.5rem] items-center justify-center rounded-full border-2 border-[#c9b49a] bg-[#fffdf8] px-5 py-2.5 text-sm font-bold text-[#3c2a22] transition hover:bg-[#efe4d4]"
+              className="inline-flex min-w-[8.5rem] items-center justify-center rounded-full border-2 border-[#fbcfe8] bg-white px-5 py-2.5 text-sm font-bold text-[#4a1528] transition hover:bg-[#fdf2f8]"
             >
               เกี่ยวกับเรา
             </Link>
