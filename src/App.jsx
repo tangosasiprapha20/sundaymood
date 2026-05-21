@@ -9,30 +9,15 @@ import Contact from "./pages/Contact.jsx";
 import About from "./pages/About.jsx";
 import OrderHistory from "./pages/OrderHistory.jsx";
 
-const imgสตรอว์เบอร์รี่ =
-  "https://images.unsplash.com/photo-1464965911861-746a04b4bca6?w=600&q=80";
-const imgบลูเบอร์รี่ =
-  "https://images.unsplash.com/photo-1498557850523-fd3d118b962e?w=600&q=80";
-const imgราสเบอร์รี่ =
-  "https://images.unsplash.com/photo-1577069861033-55d04cec883b?w=600&q=80";
-const imgแบล็กเบอร์รี่ =
-  "https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?w=600&q=80";
-const imgแครนเบอร์รี่ =
-  "https://images.unsplash.com/photo-1550831518-38c1abe42726?w=600&q=80";
-const imgมิกซ์เบอร์รี่ =
-  "https://images.unsplash.com/photo-1493916679350-3b2bba79e24b?w=600&q=80";
-const imgโกจิเบอร์รี่ =
-  "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=600&q=80";
-const imgน้ำเบอร์รี่ =
-  "https://images.unsplash.com/photo-1610970881699-44a55842ed08?w=600&q=80";
-const imgแช่แข็ง =
-  "https://images.unsplash.com/photo-1571771894821-d9b910e82ed8?w=600&q=80";
-const imgกล่องของขวัญ =
-  "https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?w=600&q=80";
-const imgสตรอว์เบอร์รี่ช็อกโกแลต =
-  "https://images.unsplash.com/photo-1488477181946-6428a0291777?w=600&q=80";
-const imgเชอร์รี่ =
-  "https://images.unsplash.com/photo-1528821122594-5a6305070b6c?w=600&q=80";
+import imgราชเบอร์รี่สด from "./assets/ราชเบอร์รี่สด.jpg";
+import imgแบล็กเบอร์รี่ from "./assets/แบล็กเบอร์รี่.jpg";
+import imgแครนเบอร์รี่ from "./assets/แครนเบอร์รี่.jpg";
+import imgมิกซ์เบอร์รี่แช่แข็ง from "./assets/มิกซ์เบอร์รี่แช่แข็ง.jpg";
+import imgเบอร์รี่คั้นสด from "./assets/เบอร์รี่คั้นสด.jpg";
+import imgเชอรี่นำเข้าฤดูใหม่ from "./assets/เชอรี่นำเข้าฤดูใหม่.jpg";
+import imgสมูทตี้มิกซ์เบอร์รี่ from "./assets/สมูทตี้มิกซ์เบอร์รี่.jpg";
+import imgแยมเบอร์รี่โฮมเมด from "./assets/แยมเบอรืรี่โฮมเมด.jpg";
+import imgGoldenBerryBox from "./assets/Golden Berry Box.jpg";
 
 /** ส่งออเดอร์ไป Discord */
 async function sendOrderToDiscord({
@@ -249,98 +234,106 @@ export default function App() {
   const products = [
     {
       id: 1,
-      name: "สตรอว์เบอร์รี่สดพรีเมียม (500g)",
-      price: 189,
+      name: "ราชเบอร์รี่สด",
+      price: 279,
       category: "fresh",
-      image: imgสตรอว์เบอร์รี่,
+      image: imgราชเบอร์รี่สด,
     },
     {
       id: 2,
-      name: "บลูเบอร์รี่นำเข้า (250g)",
-      price: 249,
-      category: "fresh",
-      image: imgบลูเบอร์รี่,
-    },
-    {
-      id: 3,
-      name: "ราสเบอร์รี่สด (200g)",
-      price: 279,
-      category: "fresh",
-      image: imgราสเบอร์รี่,
-    },
-    {
-      id: 4,
-      name: "แบล็กเบอร์รี่สด (200g)",
+      name: "แบล็กเบอร์รี่",
       price: 199,
       category: "fresh",
       image: imgแบล็กเบอร์รี่,
     },
     {
-      id: 5,
-      name: "แครนเบอร์รี่อบแห้ง (150g)",
+      id: 3,
+      name: "แครนเบอร์รี่",
       price: 129,
       category: "dried",
       image: imgแครนเบอร์รี่,
     },
     {
-      id: 6,
-      name: "โกจิเบอร์รี่อบแห้ง (200g)",
-      price: 159,
-      category: "dried",
-      image: imgโกจิเบอร์รี่,
-    },
-    {
-      id: 7,
-      name: "มิกซ์เบอร์รี่แช่แข็ง (1kg)",
+      id: 4,
+      name: "มิกซ์เบอร์รี่แช่แข็ง",
       price: 299,
       category: "frozen",
-      image: imgแช่แข็ง,
+      image: imgมิกซ์เบอร์รี่แช่แข็ง,
     },
     {
-      id: 8,
-      name: "สตรอว์เบอร์รี่ชุบช็อกโกแลต (12 ชิ้น)",
-      price: 179,
-      category: "gift",
-      image: imgสตรอว์เบอร์รี่ช็อกโกแลต,
-    },
-    {
-      id: 9,
-      name: "น้ำเบอร์รี่คั้นสด (500ml)",
+      id: 5,
+      name: "เบอร์รี่คั้นสด",
       price: 89,
       category: "fresh",
-      image: imgน้ำเบอร์รี่,
+      image: imgเบอร์รี่คั้นสด,
     },
     {
-      id: 10,
-      name: "กล่องของขวัญเบอร์รี่มิกซ์",
-      price: 590,
-      category: "gift",
-      image: imgกล่องของขวัญ,
+      id: 2,
+      name: "Frozen Raspberry",
+      price: 249,
+      category: "frozen",
+      image:
+        "https://images.unsplash.com/photo-1519996529931-28324d5a630e?q=80&w=1200&auto=format&fit=crop",
     },
+    
+    {
+      id: 5,
+      name: "Blueberry Premium",
+      price: 289,
+      category: "fresh",
+      image:
+        "https://images.unsplash.com/photo-1498557850523-fd3d118b962e?q=80&w=1200&auto=format&fit=crop",
+    },
+    {
+      id: 3,
+      name: "Dried Cranberry",
+      price: 159,
+      category: "dried",
+      image:
+        "https://images.unsplash.com/photo-1471943311424-646960669fbc?q=80&w=1200&auto=format&fit=crop",
+    },
+    {
+      id: 4,
+      name: "Berry Gift Box",
+      price: 499,
+      category: "gift",
+      image:
+        "https://images.unsplash.com/photo-1511690743698-d9d85f2fbf38?q=80&w=1200&auto=format&fit=crop",
+    },
+
   ];
 
   const comingSoon = [
+   {
+      id: "soon-1",
+      name: "Golden Berry Box",
+      teaser: "เบอร์รี่รวมพรีเมียมหวานอมเปรี้ยว พร้อมกล่องของขวัญ",
+      eta: "Coming July",
+      image:
+      imgGoldenBerryBox,
+    },
     {
       id: "soon-1",
-      name: "เชอร์รี่นำเข้าฤดูใหม่",
+      name: "เชอรี่นำเข้าฤดูใหม่",
       teaser: "หวานกรอบ จำกัดจำนวนต่อวัน",
       eta: "สัปดาห์หน้า",
-      image: imgเชอร์รี่,
+      image: imgเชอรี่นำเข้าฤดูใหม่,
     },
     {
       id: "soon-2",
       name: "สมูทตี้มิกซ์เบอร์รี่",
       teaser: "พร้อมดื่มเย็นๆ ส่งถึงบ้าน",
       eta: "ปลายเดือนนี้",
-      image: imgมิกซ์เบอร์รี่,
+      image: imgสมูทตี้มิกซ์เบอร์รี่,
     },
     {
       id: "soon-3",
-      name: "แยมเบอร์รี่โฮมเมด",
+      name: "แยมเบอรืรี่โฮมเมด",
       teaser: "ทำสดทุกอาทิตย์ ไม่ใส่วัตถุกันเสีย",
       eta: "เร็วๆ นี้",
-      image: imgราสเบอร์รี่,
+      image: imgแยมเบอร์รี่โฮมเมด,
     },
+    
   ];
 
   const addToCart = (product) => {
